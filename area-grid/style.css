@@ -1,0 +1,36 @@
+html{
+    height: 100%; 
+    background-color: #f1f1f1;
+
+    color: #181818;
+    font-size: 18px;
+}
+
+.container{
+    display: grid;
+    grid-template-areas:
+        "a a"
+        "b c"
+        "d d";
+    grid-template-columns: 1fr 1fr;;
+}
+
+.a{
+    grid-area: a;
+    text-align: center;
+}
+
+.b{
+    grid-area: b;
+    text-align: center;
+}
+
+.c{
+    grid-area: c;
+    text-align: center;
+}
+
+.d{
+    grid-area: d;
+    text-align: center;
+}

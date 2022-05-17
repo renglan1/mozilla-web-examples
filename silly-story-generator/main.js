@@ -30,7 +30,8 @@ function result() {
     newStory = newStory.replaceAll(":insertz:", zItem);
 
 
-    if(customName.value !== '') {
+    // Equivalent to checking if customName.value === ''
+    if(customName.value) {
         const name = customName.value;
         newStory = newStory.replaceAll("Bob", name);
     }

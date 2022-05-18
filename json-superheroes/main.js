@@ -11,7 +11,15 @@ async function populate() {
     const request = new Request(requestURL);
 
     const response = await fetch(request);
-    const superHeroes = await response.json();
+    /*Often, we get a raw json string from the server instead of something that can be directly converted
+    to json using the json() method
+    The text() method emulates this by getting our response as raw text instead of a json object*/
+    const superHeroesText = await response.text();
+
+    /*Then, we call the parse() method to convert this raw string into a json object
+    What's also useful is the stringify() method which reverses this operation and converts a json
+    object to a raw string which can then be sent to the server*/
+    const superHeroes = JSON.parse(superHeroesText);
 
     populateHeader(superHeroes);
     populateHeroes(superHeroes);

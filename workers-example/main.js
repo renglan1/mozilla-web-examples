@@ -1,6 +1,9 @@
 // Create a new worker, giving it the code in "generate.js"
 const worker = new Worker('./generate.js');
 
+// Workers do not have access to the same code that the main file(s) have, only what it is given
+// Workers communicate with the main code and vice versa through messages, which will be seen below
+
 // When the user clicks "Generate primes", send a message to the worker.
 // The message command is "generate", and the message also contains "quota",
 // which is the number of primes to generate.
